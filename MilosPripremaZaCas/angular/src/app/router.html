@@ -1,0 +1,48 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" routerlink="/">IT255</a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li routerLink="/" [routerLinkActiveOptions]="{ exact: true }"
+            routerLinkActive="active"><a routerLink="/">Home <span class="sr-only">(current)</span></a></li>
+
+        <li *ngIf="!isAuth" routerLink="/login" [routerLinkActiveOptions]="{ exact: true }"
+            routerLinkActive="active"><a routerLink="/login">Login <span class="sr-only">(current)</span></a></li>
+
+        <li *ngIf="!isAuth" routerLink="/register" [routerLinkActiveOptions]="{ exact: true }"
+            routerLinkActive="active"><a routerLink="/register">Register <span class="sr-only">(current)</span></a></li>
+
+
+        <li *ngIf="isAuth" routerLink="/addbrand" [routerLinkActiveOptions]="{ exact: true }"
+            routerLinkActive="active"><a routerLink="/addbrand">Add brand <span class="sr-only">(current)</span></a></li>
+
+            <li *ngIf="isAuth && isIdOne" routerLink="/addmobilni" [routerLinkActiveOptions]="{ exact: true }"
+            routerLinkActive="active"><a routerLink="/addmobilni">Add Mobilni <span class="sr-only">(current)</span></a></li>
+            <li *ngIf="isAuth" routerLink="/mobilni" [routerLinkActiveOptions]="{ exact: true }"
+            routerLinkActive="active"><a routerLink="/mobilni">Mobilni <span class="sr-only">(current)</span></a></li>
+        <li *ngIf="isAuth" routerLink="/brands" [routerLinkActiveOptions]="{ exact: true }"
+            routerLinkActive="active"><a routerLink="/brands">Brands <span class="sr-only">(current)</span></a></li>
+
+            <li *ngIf="isAuth" routerLink="/porudzbine" [routerLinkActiveOptions]="{ exact: true }"
+            routerLinkActive="active"><a routerLink="/porudzbine">Porudzbine <span class="sr-only">(current)</span></a></li>
+            
+        <li *ngIf="isAuth" ><a (click)="onLogout()">Logout</a></li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse   -->
+  </div>
+  <!-- /.container-fluid -->
+</nav>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

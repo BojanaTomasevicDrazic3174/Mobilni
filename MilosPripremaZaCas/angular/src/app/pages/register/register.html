@@ -1,0 +1,21 @@
+<form role="form" [formGroup]="registerForm" (ngSubmit)="onRegister(registerForm.value)">
+  <div class="alert alert-danger" style="display: none;">
+  </div>
+  <div class="form-group">
+    <label for="firstName">First name:</label>
+    <input id="firstName" type="text" class="form-control" formControlName='firstName'>
+  </div>
+  <div class="form-group">
+    <label for="lastName">Last name:</label>
+    <input id="lastName" type="text" class="form-control"  formControlName='lastName'>
+  </div>
+  <div class="form-group">
+    <label for="username">Username:</label>
+    <input id="username" type="text" class="form-control"  formControlName='username'>
+  </div>
+  <div class="form-group">
+    <label for="pwd">Password:</label>
+    <input id="pwd" type="password" class="form-control" formControlName='password'>
+  </div>
+  <button type="submit" class="btn btn-default">Register</button>
+</form>

@@ -1,0 +1,31 @@
+<!--porudzbine.html  -->
+<div class="col-lg-8 col-lg-offset-2">
+  
+  
+    <table  class="table display " cellspacing="0" >
+      <thead>
+      <tr>
+        <th>Br.: </th>
+        <th>Ime: </th>
+        <th>Datum: </th>
+        <th>Obrisi: </th>
+      </tr>
+      </thead>
+  
+      <tbody>
+      <tr *ngFor="let porudzbina  of porudzbine; let i= index">
+          <td>{{ i + 1 }}</td>
+        <td>{{ porudzbina.IME }}</td>
+        <td>{{ porudzbina.DATUM }}</td>
+        <td>
+          <button class="btn btn-sm btn-danger"
+          (click)="deletePorudzbina(porudzbina)">x
+
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    
+  </div>
+  
